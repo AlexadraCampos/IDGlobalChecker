@@ -1,7 +1,14 @@
 class IDGC:
     def Brazil_CPF_Validator(self, cpf: str) -> bool:
         # Remove caracteres não numéricos
-        cpf = ''.join(filter(str.isdigit, cpf))
+
+        
+        # Rertona falso se um dos i for não numérico.
+        for i in cpf:
+            if i.isnumeric() == False:
+                print("DIGITE APENAS NÚMEROS!")
+                return False 
+
 
         # Verifica se o CPF tem 11 dígitos ou se todos os dígitos são iguais
         if len(cpf) != 11 or cpf == cpf[0] * 11:
