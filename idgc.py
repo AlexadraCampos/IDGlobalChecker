@@ -24,7 +24,7 @@ class IDGC:
 
 
 jif = IDGC()
-cpf = "015.693.756-98"
+cpf = "306.559.490-03"
 retorno = jif.Brazil_CPF_Validator(cpf)
 
 if retorno:
