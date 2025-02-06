@@ -41,6 +41,18 @@ class IDGC:
         
         return cnpj[-2:] == f"{digito1}{digito2}"
 
+    def Argentina_DNI_Validator(self, dni: str) -> bool:
+
+        dni = re.sub(r'\D', '', dni)  # Remove caracteres não numéricos
+
+        # Verifica se o DNI tem 7 ou 8 dígitos
+        if not dni.isdigit() or len(dni) not in [7, 8]:
+            print("DNI deve conter 7 ou 8 dígitos numéricos!")
+            return False
+        
+        return True
+    
+
 # Testando a validação
 jif = IDGC()
 cpf = "306.559.490-03"
